@@ -20,7 +20,7 @@ If you don't have the required tools installed, there's a prebuilt docker image 
 ```sh
 docker run --rm -it \
     -v /path/to/extracted/ROM:/sysroot \
-    chenxiaolong/deodexer:1.0
+    chenxiaolong/deodexer:1.1
 ```
 
 The docker image, by default, runs Deodexer against the directory mounted at `/sysroot` inside the container. The permissions of any files created in the bind mounted volume should match the permissions of the directory itself.
