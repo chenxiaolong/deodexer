@@ -182,9 +182,6 @@ def deodex_file(sysroot, path):
 
 
 def deodex_system(sysroot):
-    if not os.path.isfile(pathlib.Path(sysroot) / 'build.prop'):
-        raise DeodexException('Invalid system directory: ' + sysroot)
-
     failed = []
 
     for root, _, files in os.walk(sysroot):
