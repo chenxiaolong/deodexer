@@ -71,6 +71,7 @@ def delete_file_and_empty_parents(path):
         except OSError as e:
             if e.errno == errno.ENOTEMPTY or e.errno == errno.ENOENT:
                 break
+            raise
 
 
 def find_optimized_files(path):
