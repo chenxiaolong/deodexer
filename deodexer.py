@@ -188,7 +188,7 @@ def deodex_system(sysroot):
 
     for root, _, files in os.walk(sysroot):
         for f in files:
-            full_path = str(pathlib.Path(root).joinpath(f))
+            full_path = str(pathlib.Path(root) / f)
 
             if f.endswith('.apk') or f.endswith('.jar'):
                 print('Processing: ' + full_path)
