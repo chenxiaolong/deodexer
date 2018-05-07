@@ -6,12 +6,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -85,11 +85,11 @@ def find_optimized_files(path):
 
     file_path = pathlib.Path(path)
     files = glob.glob(str(file_path.parent / 'oat' / '*' /
-            glob.escape(file_path.stem)) + '.*')
+                      glob.escape(file_path.stem)) + '.*')
 
     if file_path.suffix == '.jar':
         files.extend(glob.glob(str(file_path.parent / '*' /
-                ('boot-' + glob.escape(file_path.stem))) + '.*'))
+                     ('boot-' + glob.escape(file_path.stem))) + '.*'))
 
     known_extensions = ['.art', '.oat', '.odex', '.vdex']
     files_by_type = {}
@@ -165,7 +165,8 @@ def deodex_file(sysroot, path):
                     fail_info = (vdex, e)
 
             if fail_info:
-                raise DeodexException('Failed to extract vdex: ' + fail_info[0]) \
+                raise DeodexException(
+                        'Failed to extract vdex: ' + fail_info[0]) \
                         from fail_info[1]
 
             # Atomically update zip file
