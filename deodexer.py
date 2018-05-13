@@ -131,7 +131,8 @@ def add_dex_files_to_zip(zip_path, dex_dir, prefix):
 
         t.file.seek(0)
 
-        with zipfile.ZipFile(t.file, 'a') as z:
+        with zipfile.ZipFile(t.file, 'a',
+                             compression=zipfile.ZIP_DEFLATED) as z:
             for p in os.scandir(dex_dir):
                 if not p.name.startswith(prefix):
                     raise DeodexException(
