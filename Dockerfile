@@ -71,11 +71,11 @@ RUN mkdir ${ANDROID_HOME} \
     && dnf clean all
 
 # Install vdexExtractor
-ARG VDEXEXTRACTOR_COMMIT=ff95073dba8eb44e86bdd8486f040a89f78193b8
+ARG VDEXEXTRACTOR_COMMIT=02a2204bb3871bf33277035a3357ebc143ac1e0c
 
 RUN cd /tmp \
     && dnf install -y gcc git make zlib-devel \
-    && git clone https://github.com/chenxiaolong/vdexExtractor.git \
+    && git clone https://github.com/anestisb/vdexExtractor.git \
     && pushd vdexExtractor \
     && git checkout ${VDEXEXTRACTOR_COMMIT} \
     && make -C src \
